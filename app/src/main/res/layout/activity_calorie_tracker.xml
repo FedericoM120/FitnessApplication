@@ -1,40 +1,358 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    android:orientation="vertical"
     tools:context=".CalorieTrackerActivity">
 
-    <EditText
-        android:id="@+id/editTextFoodName"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:padding="10dp"
         android:layout_height="wrap_content"
-        android:hint="Enter food name"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="48dp"/>
+        android:orientation="vertical"
+        tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/editTextCalories"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Calories"
-        android:inputType="number"
-        app:layout_constraintTop_toBottomOf="@id/editTextFoodName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"/>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="Calories Remaining"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:textColor="@android:color/black"
+                    android:layout_height="0dp"
+                    tools:ignore="HardcodedText" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textAlignment="center"
+                        android:id="@+id/textGoal"
+                        android:text="0"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/black"
+                        android:layout_height="wrap_content"
+                        tools:ignore="HardcodedText" />
+                    <TextView
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:layout_width="match_parent"
+                        android:text="-"
 
-    <Button
-        android:id="@+id/buttonSubmitFood"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit"
-        app:layout_constraintTop_toBottomOf="@id/editTextCalories"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+                        android:textAlignment="center"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:layout_height="wrap_content"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/textFood"
+                        android:text="0"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/black"
+                        android:layout_height="wrap_content"
+                        tools:ignore="HardcodedText" />
+                    <TextView
+                        android:text="+"
+
+                        android:textAlignment="center"
+                        android:textColor="@android:color/holo_red_dark"                android:layout_weight="1"
+                        android:padding="2dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:ignore="HardcodedText" />
+                    <TextView
+                        android:id="@+id/textExercise"
+                        android:text="0"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:textAlignment="center"
+
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/black"
+                        android:layout_height="wrap_content"
+                        tools:ignore="HardcodedText" />
+                    <TextView
+                        android:text="="
+
+                        android:textAlignment="center"
+                        android:textColor="@android:color/holo_red_dark"                android:layout_weight="1"
+                        android:padding="2dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/textTotal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="0"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/holo_green_dark"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textAlignment="center"
+                        android:textSize="11sp"
+
+                        android:text="Goal"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/black"
+                        android:layout_height="wrap_content"
+                        tools:ignore="HardcodedText" />
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:text=" "
+                        android:textAlignment="center"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:layout_height="wrap_content"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:textSize="11sp"
+
+                        android:text="Food"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/black"
+                        android:layout_height="wrap_content"
+                        tools:ignore="HardcodedText" />
+                    <TextView
+                        android:text=" "
+
+                        android:textAlignment="center"
+                        android:textColor="@android:color/holo_red_dark"                android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:ignore="HardcodedText" />
+                    <TextView
+                        android:textAlignment="center"
+                        android:textSize="11sp"
+
+                        android:text="Exercise"
+                        android:layout_weight="1"
+
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/black"
+                        android:layout_height="wrap_content"
+                        tools:ignore="HardcodedText" />
+                    <TextView
+                        android:text=" "
+
+                        android:textAlignment="center"
+                        android:textColor="@android:color/holo_red_dark"                android:layout_weight="1"
+                        android:padding="2dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:ignore="HardcodedText" />
+                    <TextView
+                        android:textAlignment="center"
+                        android:textSize="11sp"
+
+                        android:text="Remaining"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:textColor="@android:color/black"
+                        android:layout_height="wrap_content"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:padding="10dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:text="Goal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="HardcodedText" />
+                <Button
+                    android:id="@+id/buttonAdd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:padding="10dp"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:padding="10dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:text="Breakfast"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="HardcodedText" />
+                <Button
+                    android:id="@+id/buttonAddItemBreakfast"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add Item"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:padding="10dp"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:padding="10dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:text="Lunch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="HardcodedText" />
+                <Button
+                    android:id="@+id/buttonAddItemLunch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add Item"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:padding="10dp"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:padding="10dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:text="Snacks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="HardcodedText" />
+                <Button
+                    android:id="@+id/buttonAddItemSnack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add Item"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:padding="10dp"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:padding="10dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:text="Dinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="HardcodedText" />
+                <Button
+                    android:id="@+id/buttonAddItemDinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add Item"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:padding="10dp"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:padding="10dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:text="Exercise"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="HardcodedText" />
+                <Button
+                    android:id="@+id/buttonAddItemExercise"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add Item"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:padding="10dp"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>
+
