@@ -7,10 +7,12 @@
         <entry key="..\:/Users/monte/OneDrive/Documents/FitnessApplication/app/src/main/res/layout/activity_calorie_tracker.xml" value="0.553125" />
         <entry key="..\:/Users/monte/OneDrive/Documents/FitnessApplication/app/src/main/res/layout/activity_dashboard.xml" value="0.365625" />
         <entry key="..\:/Users/monte/OneDrive/Documents/FitnessApplication/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/monte/OneDrive/Documents/FitnessApplication/app/src/main/res/layout/add_food.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/monte/OneDrive/Documents/FitnessApplication/app/src/main/res/layout/add_goal.xml" value="0.5541666666666667" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
