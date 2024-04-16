@@ -11,8 +11,13 @@ import com.example.fitnessapplication.databinding.AddGoalBinding
 
 class CalorieTrackerActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCalorieTrackerBinding
+    // Variable stores user's daily calorie goal.
     private var goalCalories = 0
+
+    // Stores total calories consumed from food.
     private var foodCalories = 0
+
+    // Stores total calories burned through exercise.
     private var exerciseCalories = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,6 +25,7 @@ class CalorieTrackerActivity : AppCompatActivity() {
         binding = ActivityCalorieTrackerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Click listeners for the buttons to add goals, food, and exercise.
         binding.buttonAdd.setOnClickListener {
             displayAddGoalDialog()
         }
@@ -45,6 +51,7 @@ class CalorieTrackerActivity : AppCompatActivity() {
         }
     }
 
+    // Function that shows the dialog after adding a calorie goal.
     private fun displayAddGoalDialog() {
         val dialogBinding = AddGoalBinding.inflate(LayoutInflater.from(this))
         val dialogView = dialogBinding.root
@@ -67,6 +74,7 @@ class CalorieTrackerActivity : AppCompatActivity() {
         dialog.show()
     }
 
+    // Displays catalog for adding food item.
     private fun displayAddFoodDialog() {
         val dialogBinding = AddFoodBinding.inflate(LayoutInflater.from(this))
         val dialogView = dialogBinding.root
@@ -97,6 +105,7 @@ class CalorieTrackerActivity : AppCompatActivity() {
         dialog.show()
     }
 
+    // Updates remaining remaining calories.
     private fun updateRemainingCalories() {
         val remainingCalories = goalCalories - foodCalories + exerciseCalories
         binding.textTotal.text = remainingCalories.toString()
